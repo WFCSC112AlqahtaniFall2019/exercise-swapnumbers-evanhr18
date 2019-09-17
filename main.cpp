@@ -11,9 +11,12 @@ void print_values(int num1, int num2) {
 // swap values of two variables
 void swap(int& num1, int& num2) {
     cout<<"Swap function"<<endl;
-    int temp = num1; // save the value of num1
-    num1 = num2; // copy over num2 to num1
-    num2 = temp; // copy the saved value of num1
+
+    int* numPtr = &num1;
+    int* numPtr2 = &num2;
+    int temp = num1;
+    *numPtr = num2;
+    *numPtr2 = temp;
 }
 
 int main() {
